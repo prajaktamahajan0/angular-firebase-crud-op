@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LodersService } from './shared/services/loders.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'httpMaterialFirebase';
+isLoading !: boolean ;  
+
+constructor(
+private _loaderService : LodersService
+){
+
+}
+
+ngOnInit(): void {
+  this._loaderService.loadingState$
+  .subscribe(res => {
+    this.isLoading = res
+  })
+}
+  openSidebar(sidebar: any) {
+    sidebar.open()
+  }
+
+
 }
