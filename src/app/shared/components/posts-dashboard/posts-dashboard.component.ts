@@ -35,7 +35,6 @@ export class PostsDashboardComponent implements OnInit {
       })
   }
 
-
   onAddPost() {
     const dialogConf = new MatDialogConfig();
     dialogConf.disableClose = true;

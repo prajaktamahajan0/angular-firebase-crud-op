@@ -30,11 +30,11 @@ import { PostInterceptorService } from './shared/services/post-inter-ceptor.serv
     ReactiveFormsModule
   ],
   providers: [
-    {
-      provide : HTTP_INTERCEPTORS,
-      useClass : PostInterceptorService,
-      multi : true
-    }
+    // {
+    //   provide : HTTP_INTERCEPTORS,
+    //   useClass : PostInterceptorService,
+    //   multi : true
+    // }
   ],
   bootstrap: [AppComponent]
 })

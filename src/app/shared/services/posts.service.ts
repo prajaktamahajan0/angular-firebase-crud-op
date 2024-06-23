@@ -16,7 +16,6 @@ export class PostsService {
 
   constructor(private _http: HttpClient) { }
 
-
   getAllPosts(): Observable<Array<Iposts>> {
     return this._http.get(this.postUrl)
       .pipe(
@@ -29,7 +28,6 @@ export class PostsService {
           return posts
         })
       )
-
   }
 
   createPost(post: Iposts): Observable<any> {

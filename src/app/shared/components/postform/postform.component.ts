@@ -17,13 +17,14 @@ export class PostformComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) editPost: any,
     private _dialogRef: MatDialogRef<PostformComponent>,
     private _postsService: PostsService
-  ) {
+  ) 
+  {
     this.createPostForm();
+    this.getPosts = editPost;
     console.log(editPost);
     if (editPost) {
-      this.getPosts = editPost;
       this.isInUpdateMode = true;
-      this.postForm.patchValue(editPost)
+      this.postForm.patchValue(this.getPosts)
     }
   }
 
@@ -59,16 +60,15 @@ export class PostformComponent implements OnInit {
   onUpdate() {
     let updatedObj = { ...this.postForm.value, id: this.getPosts.id };
     console.log("updatedObj",updatedObj);
-    console.log("this.getPosts.id",this.getPosts.id);
-    console.log("this.postForm.value",this.postForm.value);
+    
     this._postsService.updatePost(updatedObj)
    
     // this._postsService.updatePost(this.postForm.value, this.postForm.value.id)
-      .subscribe(res => {
+      .subscribe((res:any) => {
         console.log(res);
         this._postsService.sendUpdatedPost(res);
-        this.postForm.reset();
-        this._dialogRef.close();
+        // this.postForm.reset();
+        // this._dialogRef.close();
       })
 
   }

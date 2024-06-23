@@ -22,6 +22,8 @@ export class PostCardComponent implements OnInit {
 
   onEdit() {
     this.emitPost.emit(this.postObj)
+
+    
   }
 
   onDelete() {
