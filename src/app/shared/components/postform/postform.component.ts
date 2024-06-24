@@ -67,8 +67,8 @@ export class PostformComponent implements OnInit {
       .subscribe((res:any) => {
         console.log(res);
         this._postsService.sendUpdatedPost(res);
-        // this.postForm.reset();
-        // this._dialogRef.close();
+        this.postForm.reset();
+        this._dialogRef.close();
       })
 
   }

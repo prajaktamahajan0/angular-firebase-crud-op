@@ -12,7 +12,7 @@ export class PostsService {
   private newPostSub$: Subject<Iposts> = new Subject<Iposts>();
   private updatePostSub$: Subject<Iposts> = new Subject<Iposts>();
   newPostSubObs$: Observable<Iposts> = this.newPostSub$.asObservable();
-  updatePostSubObs$: Observable<Iposts> = this.newPostSub$.asObservable();
+  updatePostSubObs$: Observable<Iposts> = this.updatePostSub$.asObservable();
 
   constructor(private _http: HttpClient) { }
 
